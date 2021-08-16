@@ -55,4 +55,19 @@ dependencies {
 
     //Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
+
+
+    //Navigation
+    def lastestMaterialDrawerRelease = '8.4.2'
+    implementation "com.mikepenz:materialdrawer:${lastestMaterialDrawerRelease}"
+
+//required support lib modules
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
+    implementation "androidx.annotation:annotation:1.2.0"
+
+// Add for NavController support
+    implementation "com.mikepenz:materialdrawer-nav:${lastestMaterialDrawerRelease}"
+
+// Add for Android-Iconics support
+    implementation "com.mikepenz:materialdrawer-iconics:${lastestMaterialDrawerRelease}"
 }

@@ -7,5 +7,9 @@ class DashboardScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
+
+        setSupportActionBar(findViewById(R.id.toolbar))
+
+        supportActionBar?.title = "Dashboard"
     }
 }
