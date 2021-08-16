@@ -4,79 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/login_wallpaper"
     tools:context=".LoginScreen">
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/showDilog"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:visibility="gone"
-        app:cardCornerRadius="5dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:weightSum="100">
-
-
-            <com.mrtyvz.archedimageprogress.ArchedImageProgressBar
-                android:id="@+id/linkedin_progressBar"
-                android:layout_width="65dp"
-                android:layout_height="58dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-
-            <TextView
-                android:id="@+id/dilogText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
-                android:gravity="center|left"
-                android:lines="2"
-                android:text="acsacsdc"
-                android:textColor="@color/black"
-                android:textSize="14dp" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/login_cardview"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_marginVertical="20dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_margin="40dp"
-        app:cardCornerRadius="10dp">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="20dp"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/login_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:paddingBottom="10dp"
+                android:textSize="28sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/usernamelayout"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginTop="25dp"
+                android:layout_height="wrap_content"
                 android:clipChildren="false"
                 android:hint="@string/username"
-                app:errorEnabled="true">
+                app:errorEnabled="true"
+                app:layout_constraintBottom_toTopOf="@+id/txtPasswordLayout"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/login_title"
+                app:layout_constraintVertical_bias="0.5">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/username"
@@ -85,12 +58,10 @@
                     android:drawableStart="@drawable/ic_icon_user"
                     android:drawablePadding="15dp"
                     android:focusable="true"
-                    android:gravity="top|start"
                     android:imeOptions="actionNext"
                     android:inputType="textEmailAddress"
                     android:maxLength="20"
                     android:maxLines="1"
-                    android:paddingBottom="10dp"
                     android:singleLine="true"
                     android:textSize="14sp">
 
@@ -103,47 +74,48 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/txtPasswordLayout"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginTop="26dp"
+                android:layout_height="wrap_content"
                 android:clipChildren="false"
                 android:hint="@string/password"
                 app:errorEnabled="true"
+                app:layout_constraintBottom_toTopOf="@+id/submit"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/usernamelayout"
+                app:layout_constraintVertical_bias="0.5"
                 app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/dark_grey_color">
+                app:passwordToggleTint="@android:color/darker_gray">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:drawableStart="@drawable/ic_icon_password"
+                    android:drawableStart="@drawable/ic_password"
                     android:drawablePadding="15dp"
-                    android:focusable="true"
                     android:imeOptions="actionSend"
                     android:inputType="textPassword"
                     android:maxLines="1"
-                    android:paddingBottom="10dp"
-                    android:textColorHint="@color/dark_grey_color"
+                    android:textColorHint="@android:color/darker_gray"
                     android:textSize="14sp" />
 
 
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/submit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="35dp"
-                android:layout_marginRight="40dp"
-                android:gravity="center"
-                android:minHeight="40dp"
                 android:text="@string/submit"
                 android:textAllCaps="false"
                 android:textSize="16sp"
-                android:visibility="visible" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtPasswordLayout"
+                app:layout_constraintVertical_bias="0.5" />
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
@@ -154,7 +126,7 @@
         android:foregroundGravity="center"
         android:gravity="center"
         android:text="@string/app_vendor"
-        android:textColor="#2c5aa0"
+        android:textColor="@color/login_screen_bottom_text_color"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/build_info"
@@ -169,6 +141,7 @@
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"
         android:foregroundGravity="center"
+        android:textColor="@color/login_screen_bottom_text_color"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
