@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/login_root"
-    android:background="@drawable/login_wallpaper_blur"
+    android:background="@drawable/splash_screen_bg"
     tools:context=".LoginScreen">
 
     <androidx.cardview.widget.CardView
@@ -32,6 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/app_name"
+                android:textColor="@color/black"
                 android:paddingBottom="10dp"
                 android:textSize="28sp"
                 app:layout_constraintLeft_toLeftOf="parent"
