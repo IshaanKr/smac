@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_wallpaper"
+    android:id="@+id/login_root"
+    android:background="@drawable/login_wallpaper_blur"
     tools:context=".LoginScreen">
 
     <androidx.cardview.widget.CardView
