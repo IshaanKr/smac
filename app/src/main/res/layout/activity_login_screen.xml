@@ -47,14 +47,14 @@
                 android:clipChildren="false"
                 android:hint="@string/username"
                 app:errorEnabled="true"
-                app:layout_constraintBottom_toTopOf="@+id/txtPasswordLayout"
+                app:layout_constraintBottom_toTopOf="@+id/passwordLayout"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/login_title"
                 app:layout_constraintVertical_bias="0.5">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/username"
+                    android:id="@+id/usernameEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_icon_user"
@@ -74,7 +74,7 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txtPasswordLayout"
+                android:id="@+id/passwordLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clipChildren="false"
@@ -89,7 +89,7 @@
                 app:passwordToggleTint="@android:color/darker_gray">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/password"
+                    android:id="@+id/passwordEditText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:drawableStart="@drawable/ic_password"
@@ -114,7 +114,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtPasswordLayout"
+                app:layout_constraintTop_toBottomOf="@+id/passwordLayout"
                 app:layout_constraintVertical_bias="0.5" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

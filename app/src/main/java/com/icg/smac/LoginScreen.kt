@@ -20,15 +20,15 @@ class LoginScreen : AppCompatActivity() {
             window.decorView.windowInsetsController?.hide(WindowInsets.Type.statusBars())
         }
         setContentView(R.layout.activity_login_screen)
-    }
 
-    override fun onPostCreate(savedInstanceState: Bundle?) {
-        super.onPostCreate(savedInstanceState)
+        val usernameEditText = findViewById<TextInputEditText>(R.id.usernameEditText)
+        val passwordEditText = findViewById<TextInputEditText>(R.id.passwordEditText)
+
         with(findViewById<AppCompatButton>(R.id.submit)) {
             setOnClickListener {
-                val username = findViewById<TextInputEditText>(R.id.username).text.toString()
-                val pass = findViewById<TextInputEditText>(R.id.password).text.toString()
-                if (username.isBlank() || pass.isBlank()) {
+                val username = usernameEditText.text.toString()
+                val pass = passwordEditText.text.toString()
+                if (username.isBlank() or pass.isBlank()) {
                     Toast.makeText(
                         this@LoginScreen,
                         "Username and pass cannot be blank",

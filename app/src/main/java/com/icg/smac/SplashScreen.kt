@@ -44,15 +44,18 @@ class SplashScreen : AppCompatActivity() {
     }
 
     private fun proceedToNextActivity() {
-        startActivity(Intent(this, LoginScreen::class.java))
+        val intent =
+            if (isUserLoggedIn(this)) Intent(this, DashboardScreen::class.java)
+            else Intent(this, LoginScreen::class.java)
+        startActivity(intent)
         nextActivityJob?.cancel()
         finish()
     }
 
     private fun runTitleAnimation() {
-        with(AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left)){
+        with(AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left)) {
             reset()
-            (findViewById<View>(R.id.splash_screen_text) as TextView).let{
+            (findViewById<View>(R.id.splash_screen_text) as TextView).let {
                 it.clearAnimation()
                 it.startAnimation(this)
             }
