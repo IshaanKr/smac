@@ -17,7 +17,7 @@ class SplashScreen : AppCompatActivity() {
 
     companion object {
         private const val TAG = "SplashScreen"
-        private val NEXT_ACTIVITY_TIMEOUT by lazy { 600L }
+        private val NEXT_ACTIVITY_TIMEOUT by lazy { 800L }
         private val ANIMATION_START_DELAY by lazy { 600L }
     }
 
