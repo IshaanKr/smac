@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.icg.smac.fragments.DashboardFragment"
-        android:label="Dashboard" >
+        android:label="@string/title_fragment_dashboard" >
         <action
             android:id="@+id/action_dashboardFragment_to_createTicketFragment"
             app:destination="@id/createTicketFragment" />
@@ -22,16 +22,16 @@
     <fragment
         android:id="@+id/createTicketFragment"
         android:name="com.icg.smac.fragments.CreateTicketFragment"
-        android:label="Create Ticket"
+        android:label="@string/title_fragment_create_ticket"
         tools:layout="@layout/fragment_create_ticket" />
     <fragment
         android:id="@+id/viewTicketFragment"
         android:name="com.icg.smac.fragments.ViewTicketFragment"
-        android:label="View Ticket"
+        android:label="@string/title_fragment_view_ticket"
         tools:layout="@layout/fragment_view_ticket" />
     <fragment
         android:id="@+id/viewContractFragment"
         android:name="com.icg.smac.fragments.ViewContractFragment"
-        android:label="View Contract"
+        android:label="@string/title_fragment_view_contract"
         tools:layout="@layout/fragment_view_contract" />
 </navigation>

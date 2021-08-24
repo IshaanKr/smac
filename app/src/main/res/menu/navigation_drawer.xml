@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/dashboardFragment"
+        android:title="@string/title_fragment_dashboard" />
+
+    <item
+        android:id="@+id/createTicketFragment"
+        android:title="@string/title_fragment_create_ticket" />
+
+</menu>
