@@ -6,6 +6,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.icg.smac.databinding.ActivityMainscreenBinding
+import com.icg.smac.databinding.NavigationHeaderLayoutBinding
 
 class MainScreen : AppCompatActivity() {
 
@@ -25,6 +26,13 @@ class MainScreen : AppCompatActivity() {
         binding.toolbarLayout.toolbar.setupWithNavController(navController, appBarConfiguration)
 
         binding.navView.setupWithNavController(navController)
+
+
+        val navHLBinding = NavigationHeaderLayoutBinding.bind(binding.navView.getHeaderView(0))
+        navHLBinding.circleImageView.setImageResource(R.drawable.icg_logo_hd_circle_white_bg)
+        navHLBinding.materialDrawerAccountHeaderName.text = "Ishaan Kumar"
+        navHLBinding.materialDrawerAccountHeaderRole.text = "SuperAdmin"
+
 
     }
 }
