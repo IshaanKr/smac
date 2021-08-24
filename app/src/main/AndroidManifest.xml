@@ -20,7 +20,7 @@
         </activity>
 
         <activity android:name=".LoginScreen"/>
-        <activity android:name=".DashboardScreen"/>
+        <activity android:name=".MainScreen"/>
     </application>
 
 </manifest>

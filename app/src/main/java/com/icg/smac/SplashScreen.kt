@@ -5,7 +5,6 @@ import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.view.WindowInsets
-import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -45,7 +44,7 @@ class SplashScreen : AppCompatActivity() {
 
     private fun proceedToNextActivity() {
         val intent =
-            if (isUserLoggedIn(this)) Intent(this, DashboardScreen::class.java)
+            if (isUserLoggedIn(this)) Intent(this, MainScreen::class.java)
             else Intent(this, LoginScreen::class.java)
         startActivity(intent)
         nextActivityJob?.cancel()

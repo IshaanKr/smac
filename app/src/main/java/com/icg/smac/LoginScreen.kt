@@ -48,7 +48,7 @@ class LoginScreen : AppCompatActivity() {
     }
 
     private fun openDashboard() {
-        startActivity(Intent(this, DashboardScreen::class.java))
+        startActivity(Intent(this, MainScreen::class.java))
         finish()
     }
 }

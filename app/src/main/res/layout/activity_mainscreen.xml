@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DashboardScreen">
+    tools:context=".MainScreen">
 
-    <include layout="@layout/app_bar" />
+    <include
+        android:id="@+id/toolbarLayout"
+        layout="@layout/app_bar" />
 
     <TextView
         android:id="@+id/ticket1"
@@ -19,7 +21,7 @@
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_bar_root" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbarLayout" />
 
     <TextView
         android:id="@+id/ticket2"
