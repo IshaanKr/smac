@@ -17,7 +17,8 @@ class MainScreen : AppCompatActivity() {
         binding = ActivityMainscreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
 
         val drawerLayout = binding.root
@@ -29,6 +30,7 @@ class MainScreen : AppCompatActivity() {
 
 
         val navHLBinding = NavigationHeaderLayoutBinding.bind(binding.navView.getHeaderView(0))
+        navHLBinding.root.setBackgroundResource(R.drawable.navigation_header_bg)
         navHLBinding.circleImageView.setImageResource(R.drawable.icg_logo_hd_circle_white_bg)
         navHLBinding.materialDrawerAccountHeaderName.text = "Ishaan Kumar"
         navHLBinding.materialDrawerAccountHeaderRole.text = "SuperAdmin"
