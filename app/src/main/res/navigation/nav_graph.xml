@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
 
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.icg.smac.fragments.DashboardFragment"
+        android:label="Dashboard" >
+        <action
+            android:id="@+id/action_dashboardFragment_to_createTicketFragment"
+            app:destination="@id/createTicketFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_viewTicketFragment"
+            app:destination="@id/viewTicketFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_viewContractFragment"
+            app:destination="@id/viewContractFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createTicketFragment"
+        android:name="com.icg.smac.fragments.CreateTicketFragment"
+        android:label="Create Ticket"
+        tools:layout="@layout/fragment_create_ticket" />
+    <fragment
+        android:id="@+id/viewTicketFragment"
+        android:name="com.icg.smac.fragments.ViewTicketFragment"
+        android:label="View Ticket"
+        tools:layout="@layout/fragment_view_ticket" />
+    <fragment
+        android:id="@+id/viewContractFragment"
+        android:name="com.icg.smac.fragments.ViewContractFragment"
+        android:label="View Contract"
+        tools:layout="@layout/fragment_view_contract" />
 </navigation>
