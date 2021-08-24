@@ -8,6 +8,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="0dp"
+        android:id="@+id/new_ticket"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="10dp"
