@@ -1,23 +1,24 @@
 package com.icg.smac
 
-import android.app.Activity
 import android.content.Context
 
+
+const val PREF_FILE_NAME = "prefs"
 const val PREF_USERNAME = "pref_username"
 const val PREF_PASSWORD = "pref_password"
 
 
-fun isUserLoggedIn(activity: Activity): Boolean = isPrefPresent(activity, PREF_USERNAME)
+fun isUserLoggedIn(context: Context): Boolean = isPrefPresent(context, PREF_USERNAME)
 
-fun saveUserName(activity: Activity, value: String) = saveInPrefs(activity, PREF_USERNAME, value)
-fun savePassword(activity: Activity, value: String) = saveInPrefs(activity, PREF_PASSWORD, value)
+fun saveUserName(context: Context, value: String) = saveInPrefs(context, PREF_USERNAME, value)
+fun savePassword(context: Context, value: String) = saveInPrefs(context, PREF_PASSWORD, value)
 
-fun saveInPrefs(activity: Activity, key: String, value: String) =
-    with(activity.getPreferences(Context.MODE_PRIVATE).edit()) {
+fun saveInPrefs(context: Context, key: String, value: String) =
+    with(context.getSharedPreferences(PREF_FILE_NAME, Context.MODE_PRIVATE).edit()) {
         putString(key, value)
         apply()
     }
 
-fun isPrefPresent(activity: Activity, key: String) =
-    activity.getPreferences(Context.MODE_PRIVATE).contains(key)
+fun isPrefPresent(context: Context, key: String) =
+    context.getSharedPreferences(PREF_FILE_NAME, Context.MODE_PRIVATE).contains(key)
 

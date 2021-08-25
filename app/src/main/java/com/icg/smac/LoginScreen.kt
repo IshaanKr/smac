@@ -9,6 +9,7 @@ import android.view.WindowInsets
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import com.google.android.material.textfield.TextInputEditText
+import com.icg.smac.databinding.ActivityLoginScreenBinding
 
 class LoginScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,12 +20,13 @@ class LoginScreen : AppCompatActivity() {
         } else {
             window.decorView.windowInsetsController?.hide(WindowInsets.Type.statusBars())
         }
-        setContentView(R.layout.activity_login_screen)
+        val binding = ActivityLoginScreenBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val usernameEditText = findViewById<TextInputEditText>(R.id.usernameEditText)
-        val passwordEditText = findViewById<TextInputEditText>(R.id.passwordEditText)
+        val usernameEditText = binding.usernameEditText
+        val passwordEditText = binding.passwordEditText
 
-        with(findViewById<AppCompatButton>(R.id.submit)) {
+        with(binding.submit) {
             setOnClickListener {
                 val username = usernameEditText.text.toString()
                 val pass = passwordEditText.text.toString()
