@@ -11,8 +11,8 @@
     <group>
         <item android:title="@string/about">
             <menu>
-                <item android:title="@string/privacy_policy"/>
-                <item android:title="@string/settings"/>
+                <item android:id="@+id/privacyPolicyFragment" android:title="@string/privacy_policy"/>
+                <item android:id="@+id/settingsFragment" android:title="@string/settings"/>
             </menu>
         </item>
     </group>

@@ -18,6 +18,12 @@
         <action
             android:id="@+id/action_dashboardFragment_to_viewContractFragment"
             app:destination="@id/viewContractFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_privacyPolicyFragment"
+            app:destination="@id/privacyPolicyFragment" />
     </fragment>
     <fragment
         android:id="@+id/createTicketFragment"
@@ -34,4 +40,14 @@
         android:name="com.icg.smac.fragments.ViewContractFragment"
         android:label="@string/title_fragment_view_contract"
         tools:layout="@layout/fragment_view_contract" />
+    <fragment
+        android:id="@+id/privacyPolicyFragment"
+        android:name="com.icg.smac.fragments.PrivacyPolicyFragment"
+        android:label="@string/privacy_policy"
+        tools:layout="@layout/fragment_privacy_policy" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.icg.smac.fragments.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>
