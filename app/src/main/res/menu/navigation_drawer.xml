@@ -8,4 +8,13 @@
         android:id="@+id/createTicketFragment"
         android:title="@string/title_fragment_create_ticket" />
 
+    <group>
+        <item android:title="@string/about">
+            <menu>
+                <item android:title="@string/privacy_policy"/>
+                <item android:title="@string/settings"/>
+            </menu>
+        </item>
+    </group>
+
 </menu>
