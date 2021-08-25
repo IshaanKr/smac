@@ -2,19 +2,24 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/dashboardFragment"
+        android:icon="@android:drawable/ic_dialog_dialer"
         android:title="@string/title_fragment_dashboard" />
 
     <item
         android:id="@+id/createTicketFragment"
+        android:icon="@android:drawable/ic_input_add"
         android:title="@string/title_fragment_create_ticket" />
 
-    <group>
-        <item android:title="@string/about">
-            <menu>
-                <item android:id="@+id/privacyPolicyFragment" android:title="@string/privacy_policy"/>
-                <item android:id="@+id/settingsFragment" android:title="@string/settings"/>
-            </menu>
-        </item>
-    </group>
+    <item android:title="@string/about">
+        <menu>
+            <item
+                android:id="@+id/privacyPolicyFragment"
+                android:title="@string/privacy_policy" />
+            <item
+                android:id="@+id/settingsFragment"
+                android:icon="@android:drawable/ic_menu_preferences"
+                android:title="@string/settings" />
+        </menu>
+    </item>
 
 </menu>
