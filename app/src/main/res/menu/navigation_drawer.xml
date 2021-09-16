@@ -1,14 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/dashboardFragment"
         android:icon="@android:drawable/ic_dialog_dialer"
         android:title="@string/title_fragment_dashboard" />
 
     <item
-        android:id="@+id/createTicketFragment"
-        android:icon="@android:drawable/ic_input_add"
-        android:title="@string/title_fragment_create_ticket" />
+        android:title="Tickets"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/createTicketFragment"
+                android:title="@string/title_fragment_create_ticket" />
+            <item android:title="View Ticket" />
+        </menu>
+    </item>
+
+    <item
+        android:title="Penalty"
+        app:showAsAction="never">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:title="Initiate Penalty" />
+                <item android:title="View Penalty" />
+            </group>
+        </menu>
+    </item>
+
+    <item
+        android:title="Contract"
+        app:showAsAction="never">
+        <menu>
+            <item android:title="Create Contract" />
+            <item android:title="View Contract &amp; SLA" />
+            <item android:title="Contractor SLA" />
+        </menu>
+    </item>
+
+    <group>
+        <item android:title="Role Configuration" />
+    </group>
+    <group>
+        <item android:title="View Vendor Details" />
+    </group>
+
+    <item
+        android:title="Equipment"
+        app:showAsAction="never">
+        <menu>
+            <item android:title="Add Equipment" />
+            <item android:title="View Equipment" />
+        </menu>
+    </item>
+
+    <item
+        android:title="Vendors"
+        app:showAsAction="never">
+        <menu>
+            <item android:title="View SLA" />
+            <item android:title="View Penalty" />
+            <item android:title="View Contract" />
+            <item android:title="View Ticket" />
+        </menu>
+    </item>
 
     <item android:title="@string/about">
         <menu>

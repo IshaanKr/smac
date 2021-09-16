@@ -5,7 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
+import androidx.navigation.fragment.findNavController
+import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener
+import com.google.android.material.textfield.MaterialAutoCompleteTextView
+import com.google.android.material.textfield.TextInputEditText
 import com.icg.smac.R
+import com.icg.smac.databinding.FragmentCreateTicketBinding
+import com.icg.smac.databinding.FragmentDashboardBinding
+import com.icg.smac.dummyItems
+import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +33,12 @@ class CreateTicketFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private var _binding: FragmentCreateTicketBinding? = null
+
+    // This property is only valid between onCreateView and
+// onDestroyView.
+    private val binding get() = _binding!!
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -34,20 +51,79 @@ class CreateTicketFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_ticket, container, false)
+
+        _binding = FragmentCreateTicketBinding.inflate(layoutInflater, container, false)
+        return binding.root
+    }
+
+    override fun onStart() {
+        super.onStart()
+        (binding.contractorNameTv as? MaterialAutoCompleteTextView)?.run {
+            setAdapter(
+                ArrayAdapter(
+                    requireContext(),
+                    R.layout.drop_down_item,
+                    dummyItems
+                )
+            )
+        }
+
+        (binding.unitTv as? MaterialAutoCompleteTextView)?.run {
+            setAdapter(
+                ArrayAdapter(
+                    requireContext(),
+                    R.layout.drop_down_item,
+                    dummyItems
+                )
+            )
+        }
+
+        (binding.equipmentNameTv as? MaterialAutoCompleteTextView)?.run {
+            setAdapter(
+                ArrayAdapter(
+                    requireContext(),
+                    R.layout.drop_down_item,
+                    dummyItems
+                )
+            )
+        }
+
+        (binding.equipmentTypeTv as? MaterialAutoCompleteTextView)?.run {
+            setAdapter(
+                ArrayAdapter(
+                    requireContext(),
+                    R.layout.drop_down_item,
+                    dummyItems
+                )
+            )
+        }
+
+        (binding.serviceTypeTv as? MaterialAutoCompleteTextView)?.run {
+            setAdapter(
+                ArrayAdapter(
+                    requireContext(),
+                    R.layout.drop_down_item,
+                    dummyItems
+                )
+            )
+        }
+
+        binding.textInputLayout7.setEndIconOnClickListener {
+            val picker = MaterialDatePicker.Builder.datePicker()
+                .setTitleText("Select date")
+                .build()
+
+            picker.addOnPositiveButtonClickListener {
+                binding.dateTv.setText(Date(picker.selection!!).toGMTString())
+            }
+            picker.show(parentFragmentManager, "date-picker")
+        }
+
+
+        binding.cancelButton.setOnClickListener { findNavController().navigate(R.id.action_createTicketFragment_to_dashboardFragment) }
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CreateTicketFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             CreateTicketFragment().apply {

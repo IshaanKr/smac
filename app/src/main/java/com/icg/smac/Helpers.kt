@@ -3,6 +3,8 @@ package com.icg.smac
 import android.content.Context
 
 
+val dummyItems = listOf("Option 1", "Option 2", "Option 3", "Option 4")
+
 const val PREF_FILE_NAME = "prefs"
 const val PREF_USERNAME = "pref_username"
 const val PREF_PASSWORD = "pref_password"

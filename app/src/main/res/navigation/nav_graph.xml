@@ -29,7 +29,11 @@
         android:id="@+id/createTicketFragment"
         android:name="com.icg.smac.fragments.CreateTicketFragment"
         android:label="@string/title_fragment_create_ticket"
-        tools:layout="@layout/fragment_create_ticket" />
+        tools:layout="@layout/fragment_create_ticket" >
+        <action
+            android:id="@+id/action_createTicketFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
     <fragment
         android:id="@+id/viewTicketFragment"
         android:name="com.icg.smac.fragments.ViewTicketFragment"
