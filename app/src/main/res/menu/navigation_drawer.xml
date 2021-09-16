@@ -13,7 +13,9 @@
             <item
                 android:id="@+id/createTicketFragment"
                 android:title="@string/title_fragment_create_ticket" />
-            <item android:title="View Ticket" />
+            <item
+                android:id="@+id/viewTicketFragment"
+                android:title="@string/title_fragment_view_ticket" />
         </menu>
     </item>
 
