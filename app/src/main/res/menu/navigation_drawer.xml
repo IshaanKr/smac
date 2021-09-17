@@ -7,7 +7,7 @@
         android:title="@string/title_fragment_dashboard" />
 
     <item
-        android:title="Tickets"
+        android:title="@string/tickets"
         app:showAsAction="never">
         <menu>
             <item
@@ -20,50 +20,50 @@
     </item>
 
     <item
-        android:title="Penalty"
+        android:title="@string/penalty"
         app:showAsAction="never">
         <menu>
             <group android:checkableBehavior="single">
-                <item android:title="Initiate Penalty" />
-                <item android:title="View Penalty" />
+                <item android:title="@string/title_fragment_initiate_penalty" />
+                <item android:title="@string/title_fragment_view_penalty" />
             </group>
         </menu>
     </item>
 
     <item
-        android:title="Contract"
+        android:title="@string/contract"
         app:showAsAction="never">
         <menu>
-            <item android:title="Create Contract" />
-            <item android:title="View Contract &amp; SLA" />
-            <item android:title="Contractor SLA" />
+            <item android:title="@string/title_fragment_create_contract" />
+            <item android:title="@string/title_fragment_view_contract" />
+            <item android:title="@string/title_fragment_contractor_sla" />
         </menu>
     </item>
 
     <group>
-        <item android:title="Role Configuration" />
+        <item android:title="@string/title_fragment_role_configuration" />
     </group>
     <group>
-        <item android:title="View Vendor Details" />
+        <item android:title="@string/title_fragment_view_vendor_details" />
     </group>
 
     <item
-        android:title="Equipment"
+        android:title="@string/equipment"
         app:showAsAction="never">
         <menu>
-            <item android:title="Add Equipment" />
-            <item android:title="View Equipment" />
+            <item android:title="@string/title_fragment_add_equipment" />
+            <item android:title="@string/title_fragment_view_equipment" />
         </menu>
     </item>
 
     <item
-        android:title="Vendors"
+        android:title="@string/vendors"
         app:showAsAction="never">
         <menu>
-            <item android:title="View SLA" />
-            <item android:title="View Penalty" />
-            <item android:title="View Contract" />
-            <item android:title="View Ticket" />
+            <item android:title="@string/title_fragment_view_sla" />
+            <item android:title="@string/title_fragment_view_penalty" />
+            <item android:title="@string/title_fragment_view_contract" />
+            <item android:title="@string/title_fragment_view_ticket" />
         </menu>
     </item>
 
