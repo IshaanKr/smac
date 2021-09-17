@@ -74,7 +74,6 @@
                 android:title="@string/privacy_policy" />
             <item
                 android:id="@+id/settingsFragment"
-                android:icon="@android:drawable/ic_menu_preferences"
                 android:title="@string/settings" />
         </menu>
     </item>

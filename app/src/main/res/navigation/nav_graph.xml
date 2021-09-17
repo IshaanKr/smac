@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_dashboardFragment_to_privacyPolicyFragment"
             app:destination="@id/privacyPolicyFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_viewSingleTicketFragment"
+            app:destination="@id/viewSingleTicketFragment" />
     </fragment>
     <fragment
         android:id="@+id/createTicketFragment"
@@ -38,7 +41,11 @@
         android:id="@+id/viewTicketFragment"
         android:name="com.icg.smac.fragments.ViewTicketFragment"
         android:label="@string/title_fragment_view_ticket"
-        tools:layout="@layout/fragment_view_ticket" />
+        tools:layout="@layout/fragment_view_ticket" >
+        <action
+            android:id="@+id/action_viewTicketFragment_to_viewSingleTicketFragment"
+            app:destination="@id/viewSingleTicketFragment" />
+    </fragment>
     <fragment
         android:id="@+id/viewContractFragment"
         android:name="com.icg.smac.fragments.ViewContractFragment"
@@ -54,4 +61,9 @@
         android:name="com.icg.smac.fragments.SettingsFragment"
         android:label="@string/settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/viewSingleTicketFragment"
+        android:name="com.icg.smac.adapters.ViewSingleTicketFragment"
+        android:label="fragment_view_single_ticket"
+        tools:layout="@layout/fragment_view_single_ticket" />
 </navigation>
