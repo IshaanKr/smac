@@ -64,6 +64,6 @@
     <fragment
         android:id="@+id/viewSingleTicketFragment"
         android:name="com.icg.smac.adapters.ViewSingleTicketFragment"
-        android:label="fragment_view_single_ticket"
+        android:label="Ticket Viewer"
         tools:layout="@layout/fragment_view_single_ticket" />
 </navigation>

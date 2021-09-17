@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.icg.smac.R
+import com.icg.smac.databinding.FragmentDashboardBinding
+import com.icg.smac.databinding.FragmentViewSingleTicketBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +24,10 @@ class ViewSingleTicketFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private var _binding: FragmentViewSingleTicketBinding? = null
+    // This property is only valid between onCreateView and onDestroyView.
+    private val binding get() = _binding!!
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -34,8 +40,18 @@ class ViewSingleTicketFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_view_single_ticket, container, false)
+        _binding = FragmentViewSingleTicketBinding.inflate(layoutInflater,container,false)
+
+        binding.contractorNameTv.setText("Demo Contractor Name")
+        binding.unitTv.setText("Demo Unit")
+        binding.equipmentNameTv.setText("Demo Equipment Name")
+        binding.equipmentTypeTv.setText("Demo Equipment Type")
+        binding.dateTv.setText("1/1/2021")
+        binding.serviceTypeTv.setText("Demo Service Type")
+        binding.titleTv.setText("Demo Title")
+        binding.descriptionTv.setText("Demo Description")
+
+        return binding.root
     }
 
     companion object {

@@ -31,7 +31,6 @@
                 android:id="@+id/contractor_name_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="false"
                 android:hint="Contractor Name"
                 android:inputType="none" />
 
@@ -53,7 +52,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/unit_tv"
-                android:enabled="false"
                 android:hint="Unit"
                 android:inputType="none" />
 
@@ -74,7 +72,8 @@
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="false"
+
+
                 android:id="@+id/equipment_name_tv"
                 android:hint="Equipment Name"
                 android:inputType="none" />
@@ -96,7 +95,8 @@
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="false"
+
+
                 android:id="@+id/equipment_type_tv"
                 android:hint="Equipment Type"
                 android:inputType="none" />
@@ -121,7 +121,8 @@
                 android:id="@+id/date_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="false"
+
+
                 android:inputType="date"
                 android:hint="Date" />
 
@@ -143,7 +144,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/service_type_tv"
-                android:enabled="false"
+
+
                 android:hint="Service Type"
                 android:inputType="none" />
 
@@ -163,8 +165,10 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
+                android:id="@+id/title_tv"
                 android:layout_height="wrap_content"
-                android:enabled="false"
+
+
                 android:hint="Title" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -184,7 +188,9 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="false"
+
+
+                android:id="@+id/description_tv"
                 android:hint="Description" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -203,7 +209,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="false"
+
+
                 android:hint="Attachments" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -212,7 +219,6 @@
             android:id="@+id/cancelButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:enabled="false"
             android:text="Edit"
             app:layout_constraintEnd_toStartOf="@+id/doneButton"
             app:layout_constraintHorizontal_bias="0.5"
@@ -224,7 +230,6 @@
             android:id="@+id/doneButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:enabled="false"
             android:text="Close"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
