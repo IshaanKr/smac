@@ -23,13 +23,10 @@ class LoginScreen : AppCompatActivity() {
         val binding = ActivityLoginScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val usernameEditText = binding.usernameEditText
-        val passwordEditText = binding.passwordEditText
-
         with(binding.submit) {
             setOnClickListener {
-                val username = usernameEditText.text.toString()
-                val pass = passwordEditText.text.toString()
+                val username = binding.usernameEditText.text.toString()
+                val pass = binding.passwordEditText.text.toString()
                 if (username.isBlank() or pass.isBlank()) {
                     Toast.makeText(
                         this@LoginScreen,
