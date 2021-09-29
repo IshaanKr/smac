@@ -2,6 +2,7 @@ package com.icg.smac
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
@@ -29,12 +30,19 @@ class MainScreen : AppCompatActivity() {
         binding.navView.setupWithNavController(navController)
 
 
+        initViews()
+
+
+    }
+
+    private fun initViews() {
         val navHLBinding = NavigationHeaderLayoutBinding.bind(binding.navView.getHeaderView(0))
         navHLBinding.root.setBackgroundResource(R.drawable.navigation_header_bg)
         navHLBinding.circleImageView.setImageResource(R.drawable.icg_logo_hd_circle_white_bg)
-        navHLBinding.materialDrawerAccountHeaderName.text = "Ishaan Kumar"
-        navHLBinding.materialDrawerAccountHeaderRole.text = "SuperAdmin"
 
-
+        lifecycleScope.launchWhenStarted {
+            navHLBinding.materialDrawerAccountHeaderName.text = getUserName()
+            navHLBinding.materialDrawerAccountHeaderRole.text = getUserRole()
+        }
     }
 }

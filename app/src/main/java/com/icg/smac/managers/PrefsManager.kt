@@ -15,10 +15,12 @@ object PrefsManager {
     const val FILE_NAME = "datastore_prefs"
     const val USERNAME = "dsp_username"
     const val PASSWORD = "dsp_password"
+    const val ROLE = "dsp_role"
     private const val NOT_FOUND = "not_found"
 
     val PREF_USERNAME = stringPreferencesKey(USERNAME)
     val PREF_PASSWORD = stringPreferencesKey(PASSWORD)
+    val PREF_ROLE = stringPreferencesKey(ROLE)
 
     private lateinit var dataStore: DataStore<Preferences>
 
@@ -48,6 +50,16 @@ object PrefsManager {
                 settings[prefKey] = value
             }
         }
+    }
+
+    suspend fun getStringDataStorePref(prefKey: Preferences.Key<String>): String =
+        getDataStorePref(prefKey)
+
+    private suspend fun <T> getDataStorePref(prefKey: Preferences.Key<T>): T {
+        return dataStore.data
+            .map { preferences ->
+                preferences[prefKey] ?: NOT_FOUND
+            }.first() as T
     }
 
 }

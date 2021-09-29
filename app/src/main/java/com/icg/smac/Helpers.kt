@@ -1,10 +1,8 @@
 package com.icg.smac
 
-import android.content.Context
-import com.icg.smac.managers.PrefsManager.FILE_NAME
 import com.icg.smac.managers.PrefsManager.PREF_PASSWORD
 import com.icg.smac.managers.PrefsManager.PREF_USERNAME
-import com.icg.smac.managers.PrefsManager.USERNAME
+import com.icg.smac.managers.PrefsManager.getStringDataStorePref
 import com.icg.smac.managers.PrefsManager.isStringDataStorePrefPresent
 import com.icg.smac.managers.PrefsManager.saveStringDataStorePref
 import kotlinx.coroutines.runBlocking
@@ -16,4 +14,7 @@ fun isUserLoggedIn(): Boolean = runBlocking { isStringDataStorePrefPresent(PREF_
 
 fun saveUserName(value: String) = saveStringDataStorePref(PREF_USERNAME, value)
 fun savePassword(value: String) = saveStringDataStorePref(PREF_PASSWORD, value)
+
+suspend fun getUserName(): String = getStringDataStorePref(PREF_USERNAME)
+suspend fun getUserRole(): String = "SuperAdmin"
 
