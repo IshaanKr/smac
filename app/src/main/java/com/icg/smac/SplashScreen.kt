@@ -9,6 +9,7 @@ import android.view.animation.AnimationUtils
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.*
 
 
@@ -31,12 +32,12 @@ class SplashScreen : AppCompatActivity() {
             window.decorView.windowInsetsController?.hide(WindowInsets.Type.statusBars())
         }
         setContentView(R.layout.activity_splashscreen)
-        GlobalScope.launch {
+        lifecycleScope.launch {
             delay(ANIMATION_START_DELAY)
             runTitleAnimation()
         }
         findViewById<ConstraintLayout>(R.id.splash_screen_root).setOnClickListener { proceedToNextActivity() }
-        nextActivityJob = GlobalScope.launch() {
+        nextActivityJob = lifecycleScope.launch() {
             delay(ANIMATION_START_DELAY + NEXT_ACTIVITY_TIMEOUT)
             proceedToNextActivity()
         }
@@ -44,7 +45,7 @@ class SplashScreen : AppCompatActivity() {
 
     private fun proceedToNextActivity() {
         val intent =
-            if (isUserLoggedIn(this)) Intent(this, MainScreen::class.java)
+            if (isUserLoggedIn()) Intent(this, MainScreen::class.java)
             else Intent(this, LoginScreen::class.java)
         startActivity(intent)
         nextActivityJob?.cancel()

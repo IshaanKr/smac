@@ -7,8 +7,6 @@ import android.os.Bundle
 import android.view.View
 import android.view.WindowInsets
 import android.widget.Toast
-import androidx.appcompat.widget.AppCompatButton
-import com.google.android.material.textfield.TextInputEditText
 import com.icg.smac.databinding.ActivityLoginScreenBinding
 
 class LoginScreen : AppCompatActivity() {
@@ -41,8 +39,8 @@ class LoginScreen : AppCompatActivity() {
     }
 
     private fun doLogin(username: String, pass: String) {
-        saveUserName(this, username)
-        savePassword(this, pass)
+        saveUserName(username)
+        savePassword(pass)
         openDashboard()
     }
 
