@@ -40,7 +40,7 @@
     <fragment
         android:id="@+id/viewTicketFragment"
         android:name="com.icg.smac.fragments.ViewTicketFragment"
-        android:label="@string/title_fragment_view_ticket"
+        android:label="@string/tickets"
         tools:layout="@layout/fragment_view_ticket" >
         <action
             android:id="@+id/action_viewTicketFragment_to_viewSingleTicketFragment"
