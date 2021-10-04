@@ -31,7 +31,7 @@
                 android:id="@+id/login_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/app_name"
+                android:text="@string/smac"
                 android:textColor="@color/black"
                 android:paddingBottom="10dp"
                 android:textSize="28sp"
@@ -47,6 +47,7 @@
                 android:clipChildren="false"
                 android:hint="@string/username"
                 app:errorEnabled="true"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:layout_constraintBottom_toTopOf="@+id/passwordLayout"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -80,6 +81,7 @@
                 android:clipChildren="false"
                 android:hint="@string/password"
                 app:errorEnabled="true"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:layout_constraintBottom_toTopOf="@+id/submit"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -104,7 +106,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <androidx.appcompat.widget.AppCompatButton
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/submit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

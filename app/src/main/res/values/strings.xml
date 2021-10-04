@@ -30,4 +30,5 @@
     <string name="vendors">Vendors</string>
     <string name="title_fragment_view_sla">View SLA</string>
     <string name="tickets">Tickets</string>
+    <string name="smac">SMAC</string>
 </resources>

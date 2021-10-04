@@ -17,7 +17,6 @@
 
     <item android:title="@string/contract" />
 
-
     <item
         android:id="@+id/settingsFragment"
         android:title="@string/settings" />
