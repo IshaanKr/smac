@@ -15,6 +15,7 @@ import com.icg.smac.databinding.ActivityLoginScreenBinding
 import com.icg.smac.interfaces.services.AuthService
 import com.icg.smac.managers.RequestManager.Companion.BASE_URL
 import com.icg.smac.models.requests.LoginReq
+import kotlinx.coroutines.runBlocking
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -72,12 +73,7 @@ class LoginScreen : AppCompatActivity() {
         val authService =
             Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create())
                 .build().create(AuthService::class.java)
-        val tempLoginBlocking = authService.tempLoginBlocking(LoginReq("NCG", username, pass))
-        Log.d(TAG, "doLogin: request: ${tempLoginBlocking.request().body()}")
-        val res = tempLoginBlocking.execute()
-
-        Log.d(TAG, "doLogin: response: ${res.body()!![0]}")
-
+        val res = authService.tempLoginBlocking(LoginReq("NCG", username, pass)).execute()
         if (res.isSuccessful && res.body()!![0].message == "Success") {
             onLoginSuccess(username, pass)
             Toast.makeText(this, "Login Success", Toast.LENGTH_LONG).show()
@@ -95,8 +91,10 @@ class LoginScreen : AppCompatActivity() {
 
     private fun onLoginSuccess(username: String, pass: String) {
         barProgressDialog.cancel()
-        saveUserName(username)
-        savePassword(pass)
+        runBlocking {
+            saveUserName(username)
+            savePassword(pass)
+        }
         openDashboard()
     }
 
