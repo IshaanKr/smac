@@ -8,18 +8,44 @@
     android:background="@drawable/splash_screen_bg"
     tools:context=".LoginScreen">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/login_cardview"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginVertical="20dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <LinearLayout
+        android:id="@+id/logView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/login_root"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+
+
+    <ImageView
+        android:layout_width="@dimen/_125sdp"
+        android:layout_height="@dimen/_125sdp"
+        android:foregroundGravity="center"
+        app:srcCompat="@drawable/logo" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/login_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:background="@drawable/background_box_line_main"
+        android:minHeight="350dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.59">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -31,10 +57,13 @@
                 android:id="@+id/login_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/smac"
-                android:textColor="@color/black"
+                android:fontFamily="@font/hk_grotesk_bold"
+                android:foregroundGravity="center"
+                android:gravity="center"
                 android:paddingBottom="10dp"
-                android:textSize="28sp"
+                android:text="@string/log_in"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_17sdp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -42,12 +71,14 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/usernamelayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:clipChildren="false"
                 android:hint="@string/username"
+                android:minHeight="45dp"
                 app:errorEnabled="true"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:layout_constraintBottom_toTopOf="@+id/passwordLayout"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -76,13 +107,13 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/passwordLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clipChildren="false"
                 android:hint="@string/password"
                 app:errorEnabled="true"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                app:layout_constraintBottom_toTopOf="@+id/submit"
+                app:layout_constraintBottom_toTopOf="@+id/logintype"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/usernamelayout"
@@ -106,33 +137,78 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
+            <LinearLayout
+                android:id="@+id/logintype"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/submit">
+
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    :android:orientation="horizontal"
+                    android:weightSum="5">
+
+
+                    <RadioButton
+                        android:id="@+id/customer"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3.7"
+                        android:fontFamily="@font/hk_grotesk_medium"
+                        android:gravity="left|center"
+                        android:text="User"
+                        android:textSize="12dp" />
+
+
+                    <RadioButton
+                        android:id="@+id/docter"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="end"
+                        android:layout_weight="1.3"
+                        android:fontFamily="@font/hk_grotesk_medium"
+                        android:gravity="end|center"
+                        android:text="Official"
+                        android:textSize="12dp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/submit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:text="@string/submit"
                 android:textAllCaps="false"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/passwordLayout"
-                app:layout_constraintVertical_bias="0.5" />
+                app:layout_constraintTop_toBottomOf="@+id/logintype" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:foregroundGravity="center"
+         android:fontFamily="@font/hk_grotesk_semibold"
         android:gravity="center"
-        android:text="@string/app_vendor"
-        android:textColor="@color/login_screen_bottom_text_color"
-        android:textSize="12sp"
-        android:textStyle="bold"
+        android:textSize="@dimen/_10sdp"
+        android:text="Copyright: Indian Coast Gurad @2021"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/build_info"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
@@ -141,17 +217,16 @@
         android:id="@+id/build_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"
         android:foregroundGravity="center"
+        android:fontFamily="@font/hk_grotesk_semibold"
         android:textColor="@color/login_screen_bottom_text_color"
-        android:textSize="12sp"
-        android:textStyle="bold"
+        android:textSize="@dimen/_10sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:text="build-no-11111" />
+        tools:text="Version :  v1.1.101" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

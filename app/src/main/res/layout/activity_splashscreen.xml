@@ -1,34 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/splash_screen_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_wallpaper_blur">
+    android:background="@drawable/splash_screen_bg">
 
-    <ImageView
-        android:id="@+id/icg_logo"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/icg_logo_with_text_white_bg_circle"
-        app:layout_constraintBottom_toTopOf="@+id/splash_screen_text"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/hk_grotesk_semibold"
+        android:gravity="center"
+        android:text="v1.1.101"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10sdp"
+        tools:layout_editor_absoluteY="2dp"
+        app:layout_constraintRight_toRightOf="@+id/splash_screen_root"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/splash_screen_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="192dp"
         android:gravity="center"
         android:text="@string/smac"
         android:textColor="@color/white"
-        android:textSize="100sp"
-        android:textStyle="bold|italic"
+        android:textSize="@dimen/_25sdp"
+        android:fontFamily="@font/hk_grotesk_bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/icg_logo" />
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:gravity="center"
+        android:text=" Warning:  For authorised use Indian Coast Guard only"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10sdp"
+        android:fontFamily="@font/hk_grotesk_regular"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:fontFamily="@font/hk_grotesk_semibold"
+        android:gravity="center"
+        android:text="Copyright: Indian Coast Gurad @2021"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
